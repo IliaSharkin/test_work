@@ -1,0 +1,6 @@
+SELECT goods_type_name FROM goods
+JOIN goods_type ON goods_type.goods_type_id = goods.goods_type_id
+JOIN orders ON orders.goods_id = goods.goods_id
+GROUP BY goods_type_name
+ORDER BY SUM(total) DESC
+LIMIT 1;
